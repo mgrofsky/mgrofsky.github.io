@@ -173,18 +173,6 @@
   .circuit.tl { top: 26px; left: -8px; }
   .circuit.br { bottom: 20px; right: -8px; transform: rotate(180deg); }
 
-  /* ---------- stats ---------- */
-  .stats { border-bottom: 1px solid var(--line); background: var(--bg-raise); }
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-  @media (max-width: 820px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-  .stat { padding: 30px 22px; text-align: center; border-left: 1px solid var(--line); }
-  .stat:first-child { border-left: none; }
-  @media (max-width: 820px) { .stat:nth-child(3) { border-left: none; } .stat { border-top: 1px solid var(--line); } .stat:nth-child(-n+2) { border-top: none; } }
-  .stat .num { color: var(--gold); font-family: 'Figtree', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: .01em; }
-  .stat .num a { color: inherit; }
-  .stat .num a:hover { text-decoration: underline; }
-  .stat .lbl { color: var(--gray); font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; margin-top: 6px; }
-
   /* ---------- sections ---------- */
   section { padding: 78px 0 8px; }
   .sec-head { margin-bottom: 40px; }
@@ -362,15 +350,6 @@
 </header>
 
 <main id="main">
-<div class="stats">
-  <div class="wrap stats-grid">
-    <div class="stat"><div class="num">30</div><div class="lbl">Years in Technology &amp; Security</div></div>
-    <div class="stat"><div class="num">243</div><div class="lbl">Threats Evaluated in Doctoral Research</div></div>
-    <div class="stat"><div class="num">216</div><div class="lbl">REST Endpoints, One MCP Layer</div></div>
-    <div class="stat"><div class="num"><a href="https://patents.google.com/patent/US7831028B2/en" target="_blank" rel="noopener">7,831,028</a></div><div class="lbl">U.S. Patent No., Co-Inventor</div></div>
-  </div>
-</div>
-
 <section id="about">
   <div class="wrap">
     <div class="sec-head">
