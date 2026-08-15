@@ -136,6 +136,11 @@
     font-weight: 500; letter-spacing: .02em; margin-bottom: 18px;
     font-family: 'Figtree', sans-serif;
   }
+  .hero .rotator { height: 26px; margin-bottom: 14px; }
+  .hero .rotator span {
+    color: var(--gold); font-family: 'Figtree', sans-serif; font-weight: 600;
+    font-size: 17px; letter-spacing: .05em; opacity: 1; transition: opacity .45s ease;
+  }
   .hero .roles { color: var(--gray); font-size: 15.5px; max-width: 560px; margin-bottom: 26px; }
   .hero .mission {
     color: var(--white); font-size: 17px; max-width: 600px;
@@ -310,6 +315,7 @@
       <div class="dash"></div>
       <h1>Matt Grofsky, D.Eng., CISSP</h1>
       <div class="subtitle">AI/ML &amp; Cybersecurity Strategist</div>
+      <div class="rotator"><span id="rotator-text">Democratizing Cybersecurity</span></div>
       <div class="roles">
         Chief Information Security Officer, Sharpen Technologies<br>
         Adjunct Professor &amp; Doctoral Advisor, The George Washington University
@@ -620,6 +626,29 @@
 </section>
 
 </main>
+
+<script>
+(function () {
+  var phrases = [
+    "Democratizing Cybersecurity",
+    "AI-Assisted Security Automation",
+    "Threat Modeling with Generative AI",
+    "Autonomous Security, With Guardrails",
+    "Secure by Design"
+  ];
+  var el = document.getElementById("rotator-text");
+  if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var i = 0;
+  setInterval(function () {
+    el.style.opacity = 0;
+    setTimeout(function () {
+      i = (i + 1) % phrases.length;
+      el.textContent = phrases[i];
+      el.style.opacity = 1;
+    }, 450);
+  }, 3400);
+})();
+</script>
 
 <footer>
   <div class="rule-magenta"></div>
