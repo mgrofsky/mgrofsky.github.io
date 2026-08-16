@@ -235,8 +235,10 @@
   /* cards */
   .grid { display: grid; gap: 18px; }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 820px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+  @media (max-width: 1080px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 820px) { .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; } }
   .card {
     background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius);
     padding: 26px 24px; transition: border-color .18s ease;
@@ -446,7 +448,7 @@
       <div class="dash"></div>
       <h2>Expertise</h2>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-4">
       <div class="card">
         <div class="mini-dash"></div>
         <h3>Executive Security Leadership</h3>
@@ -469,8 +471,18 @@
       </div>
       <div class="card">
         <div class="mini-dash"></div>
-        <h3>Cloud Security &amp; Site Reliability</h3>
-        <p>Securing cloud infrastructure and developer platforms under PCI DSS v4.0.1, HIPAA, and SOC 2 obligations, and running them with SRE discipline: SLAs, SLOs, and SLIs that keep reliability measurable.</p>
+        <h3>Cloud &amp; Platform Security</h3>
+        <p>Securing cloud infrastructure and developer platforms operating under PCI DSS v4.0.1, HIPAA, and SOC 2 obligations.</p>
+      </div>
+      <div class="card">
+        <div class="mini-dash"></div>
+        <h3>Site Reliability Engineering</h3>
+        <p>Building and leading SRE practice for production platforms: SLAs, SLOs, and SLIs that make reliability measurable, backed by automation that reduces toil.</p>
+      </div>
+      <div class="card">
+        <div class="mini-dash"></div>
+        <h3>Language Models from Scratch</h3>
+        <p>Training GPT-style language models from the ground up: dataset preparation, tokenization, transformer architecture, and the full pretraining loop.</p>
       </div>
       <div class="card">
         <div class="mini-dash"></div>
