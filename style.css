@@ -72,7 +72,12 @@ svg { display:block; flex-shrink:0; width:21px; height:21px; }
 .control-boundary span:first-child { color:var(--gold); }
 .control-boundary span+span { color:var(--quiet); margin-top:3px; }
 .diagram-caption { text-align:center; font-size:10px; color:var(--quiet); line-height:1.5; }
-.guardrail-visual .diagram-caption { margin-top:8px; }
+.project-visual.boundary-visual { height:auto; min-height:212px; padding:20px; gap:12px; }
+.boundary-check { border:1px solid var(--line); padding:10px 12px; }
+.boundary-flow { display:grid; grid-template-columns:minmax(0,1fr) auto auto; align-items:center; gap:8px; color:var(--text); }
+.boundary-flow strong { color:var(--gold); font-size:14px; }
+.boundary-check:last-child .boundary-flow strong { color:var(--accent); }
+.boundary-check p { margin-top:4px; font-size:11px; line-height:1.45; }
 .function-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-left:1px solid #57584c; border-top:1px solid #57584c; margin-bottom:18px; }
 .function-grid span { display:grid; place-items:center; min-height:52px; border-right:1px solid #57584c; border-bottom:1px solid #57584c; color:var(--text); font-size:11px; }
 .function-grid span:nth-child(2),.function-grid span:nth-child(5) { color:var(--gold); background:#f2b70508; }
