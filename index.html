@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow"><meta name="description" content="Matt Grofsky: AI safety and security, applied research, security engineering, and secure developer platforms.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=e9d9dc5387"><script src="site.js?v=edc79c3fe1" defer></script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=4c81fe02a1"><script src="site.js?v=edc79c3fe1" defer></script>
 <title>AI Safety &amp; Security | Matt Grofsky</title>
 <meta name="author" content="Matt Grofsky">
 <meta name="keywords" content="Matt Grofsky, CISO, CTO, cybersecurity, AI security, developer platforms, application security, vulnerability management, threat modeling, AegisShield, NVD, CVE, AlienVault OTX, VirusTotal, malware analysis, MCP, agentic workflows, security automation, D.Eng, CISSP">
@@ -70,14 +70,20 @@
         </div><div class="project-copy"><p class="category">Generative AI research</p>
       <h3>AegisShield</h3><p class="project-summary">Generative AI threat modeling using NVD/CVE records and AlienVault OTX intelligence, evaluated through doctoral research.</p>
       <div class="project-links"><a class="text-link" href="https://github.com/mgrofsky/AegisShield" target="_blank" rel="noopener noreferrer">Explore the code<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="text-link" href="https://www.proquest.com/docview/3233915741" target="_blank" rel="noopener noreferrer">Read the doctoral praxis<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><details class="project-detail" id="aegisshield-details"><summary><span>Technical detail</span><svg class="disclosure-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="1.6"/><path class="plus-stem" d="M12 5v14" stroke="currentColor" stroke-width="1.6"/></svg></summary><div class="detail-copy"><div><h4>Sources</h4><p>Built NVD retrieval by technology and version, combining CVE records with AlienVault OTX context.</p></div><div><h4>Analysis</h4><p>Combined architecture context, STRIDE, and DREAD to generate prioritized threats, mitigations, and security tests for under-resourced teams.</p></div><div><h4>Evaluation</h4><p>Examined readability, semantic similarity to expert threat models, and MITRE ATT&amp;CK mapping coverage across 15 case studies, 243 reference threats, and 8,000+ generated threats.</p></div></div></details></div></article><article class="project-card featured-card" id="guardrail-eval">
-      <div class="project-visual boundary-visual" role="img" aria-label="Two separate checks: Redline checks chatbot answers against rules. Latch checks permissions, approvals, and limits before a requested action runs.">
-          <div class="boundary-check">
-            <div class="boundary-flow"><span>Chatbot answer</span><span aria-hidden="true">→</span><strong>Redline</strong></div>
-            <p>Checks the answer against your rules.</p>
+      <div class="project-visual boundary-visual" role="img" aria-label="Two independent paths. A chatbot answer goes to Redline for a pass, fail, or review decision. A tool call goes to Latch and is allowed to run, blocked, or held for approval.">
+          <div class="boundary-path">
+            <div class="boundary-input">Chatbot answer</div>
+            <div class="connector"></div>
+            <div class="diagram-engine">Redline</div>
+            <div class="connector boundary-branch"></div>
+            <div class="boundary-outcomes"><span>Pass</span><span>Fail</span><span>Review</span></div>
           </div>
-          <div class="boundary-check">
-            <div class="boundary-flow"><span>Tool call</span><span aria-hidden="true">→</span><strong>Latch</strong></div>
-            <p>Checks permissions, approvals, and limits before the action runs.</p>
+          <div class="boundary-path boundary-path-latch">
+            <div class="boundary-input">Tool call</div>
+            <div class="connector"></div>
+            <div class="diagram-engine">Latch</div>
+            <div class="connector boundary-branch"></div>
+            <div class="boundary-outcomes"><span>Run</span><span>Block</span><span>Needs<br>approval</span></div>
           </div>
         </div><div class="project-copy"><p class="category">Safety &amp; security tools</p>
       <h3>Boundary Lab</h3><p class="project-summary">Practical safety and security tools for chatbot apps. Redline checks answers against rules. Latch is a reusable Python package that checks permissions, approvals, and limits before a tool call runs.</p>
